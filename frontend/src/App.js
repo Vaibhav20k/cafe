@@ -1,57 +1,86 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
+import { useEffect, useState, Component } from "react";
+import Lenis from "lenis";
+import "./App.css";
+import { ChatCtx } from "./context";
+import Preloader from "./components/Preloader";
+import Cursor from "./components/Cursor";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import MarqueeRibbon from "./components/MarqueeRibbon";
+import StorySection from "./components/StorySection";
+import RitualSection from "./components/RitualSection";
+import MenuSection from "./components/MenuSection";
+import LocationHours from "./components/LocationHours";
+import Footer from "./components/Footer";
+import AiChatWidget from "./components/AiChatWidget";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { failed: false };
+  }
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    if (this.state.failed) {
+      return (
+        <div className="flex min-h-screen items-center justify-center bg-obsidian text-cream">
+          <p className="font-serif2 text-xl italic">The kettle hiccuped. Refresh to pour again.</p>
+        </div>
+      );
     }
-  };
+    return this.props.children;
+  }
+}
+
+function Page() {
+  const [ready, setReady] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const openChat = () => setChatOpen(true);
 
   useEffect(() => {
-    helloWorldApi();
+    const lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    window.__lenis = lenis;
+    let rafId;
+    const raf = (t) => {
+      lenis.raf(t);
+      rafId = requestAnimationFrame(raf);
+    };
+    rafId = requestAnimationFrame(raf);
+    return () => {
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      window.__lenis = null;
+    };
   }, []);
 
   return (
-    // The marker attribute below lets the platform probe detect the stock splash — remove it with this page
-    <div data-emergent-splash>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
-
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <ChatCtx.Provider value={{ openChat }}>
+      <Preloader onDone={() => setReady(true)} />
+      <Cursor />
+      <div className="grain" aria-hidden />
+      <Navbar onAsk={openChat} />
+      <main>
+        <Hero ready={ready} onAsk={openChat} />
+        <MarqueeRibbon />
+        <StorySection />
+        <RitualSection />
+        <MenuSection />
+        <LocationHours />
+      </main>
+      <Footer />
+      <AiChatWidget open={chatOpen} setOpen={setChatOpen} />
+    </ChatCtx.Provider>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <div className="bg-obsidian text-cream">
+      <ErrorBoundary>
+        <Page />
+      </ErrorBoundary>
+    </div>
+  );
+}

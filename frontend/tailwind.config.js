@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    // `overline` is a Tailwind utility; without this an app's own eyebrow-label class draws a line above the text.
     blocklist: ["overline"],
     darkMode: ["class"],
     content: [
@@ -48,35 +47,52 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))'
-        }
+        obsidian: '#0B0908',
+        coal: '#141210',
+        ember: '#1A1715',
+        brass: {
+          DEFAULT: '#E0A96D',
+          deep: '#C89D5C',
+        },
+        terra: '#C2593F',
+        ochre: '#D97706',
+        cream: '#F5F3EF',
+        stoneish: '#A8A29E',
+        faint: '#78716C',
+        glass: 'rgba(18,15,13,0.72)'
+      },
+      fontFamily: {
+        display: ['"Playfair Display"', 'serif'],
+        serif2: ['"Cormorant Garamond"', 'serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"Space Mono"', 'monospace'],
+        dev: ['"Rozha One"', 'serif'],
       },
       keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0'
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)'
-          }
+        'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
+        'accordion-up': { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } },
+        marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
+        'pulse-dot': {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.45', transform: 'scale(0.72)' },
         },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)'
-          },
-          to: {
-            height: '0'
-          }
-        }
+        'float-soft': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        steam: {
+          '0%': { transform: 'translateY(0) scaleX(1)', opacity: '0' },
+          '25%': { opacity: '0.7' },
+          '100%': { transform: 'translateY(-42px) scaleX(1.6)', opacity: '0' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        marquee: 'marquee 42s linear infinite',
+        'pulse-dot': 'pulse-dot 1.8s ease-in-out infinite',
+        'float-soft': 'float-soft 5s ease-in-out infinite',
+        steam: 'steam 2.6s ease-out infinite',
       }
     }
   },

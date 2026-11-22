@@ -1,0 +1,241 @@
+{
+  "project_name": "SARAI — Specialty Indian Coffee House",
+  "archetype": "ARCHETYPE 5: LUXURY & MOODY ESPRESSO BAR WITH WARM MINIMALISM AND MODERN INDIAN RESTRAINT",
+  "app_type": "single_page_marketing_site",
+  "concept": "SARAI (सराय — historically a sanctuary and caravan resting house for ancient travellers along the Grand Trunk Road and spice routes). Fused into a hyper-modern, award-winning specialty coffee atelier spotlighting single-origin Indian microlots (Chikmagalur, Araku Valley, Monsooned Malabar, Coorg) brewed with sculptural precision (Brass South Indian Kaapi Syphon, Nitro Pour-over, Smoked Jaggery Espresso, Cardamom Husk Cold Brew).",
+  "design_dna": {
+    "vibe_fusion": "Warm Minimalist architecture + Dark & Moody night espresso bar + Bold modern typographic tension",
+    "inspiration_level": "Awwwards Site of the Day / Godly.website level. Zero AI-slop: NO purple gradients, NO centered Inter cards, NO generic stock photo boxes, NO default bootstrap columns",
+    "visual_texture": "Subtle film grain / noise overlay, warm obsidian (#0C0A09), terracotta/burnt ochre accents (#D97706 / #C2410C / #E0A96D), brass & raw linen, hairline borders with 10-15% opacity, and masked line-by-line editorial reveals"
+  },
+  "typography": {
+    "headline_font": "Playfair Display (or Cormorant Garamond / Syne via Google Fonts link) with serif italic accents, tracking-tight, leading-none",
+    "subheading_font": "Cabinet Grotesk or Plus Jakarta Sans / Outfit for crisp modern architectural clarity",
+    "body_font": "Plus Jakarta Sans or Manrope (clean, warm, highly legible)",
+    "mono_accent_font": "JetBrains Mono / Space Mono (for bean elevation, microlot coordinates, tasting notes, roast batch #, brewing ratios)",
+    "google_fonts_embed": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap",
+    "rules": [
+      "H1 ceiling strictly text-4xl sm:text-5xl lg:text-6xl with leading-[1.05] and tracking-tight. NEVER use text-7xl or text-8xl for main headings.",
+      "Overlines / Eyebrows: uppercase + text-[11px] or text-xs + tracking-[0.25em] font-mono text-amber-500/80",
+      "Menu item titles: font-serif text-xl sm:text-2xl text-stone-100",
+      "Prices: font-mono text-amber-400 font-medium"
+    ]
+  },
+  "colors": {
+    "background_dark": "#0B0908",
+    "surface_card": "#141210",
+    "surface_elevated": "#1A1715",
+    "surface_glass": "rgba(18, 15, 13, 0.72)",
+    "primary_amber": "#E0A96D",
+    "accent_brass": "#C89D5C",
+    "accent_terracotta": "#C2593F",
+    "accent_ochre": "#D97706",
+    "border_subtle": "rgba(224, 169, 109, 0.12)",
+    "border_active": "rgba(224, 169, 109, 0.35)",
+    "text_main": "#F5F3EF",
+    "text_muted": "#A8A29E",
+    "text_faint": "#78716C",
+    "forbidden_colors": ["#7351B7", "generic vibrant purple", "neon cyan", "pure white over saturated gradient"]
+  },
+  "motion_and_smooth_scroll": {
+    "smooth_scrolling": "Lenis via 'lenis' or custom requestAnimationFrame smooth momentum wrapper for buttery weighted scroll",
+    "framer_motion_patterns": [
+      "Masked line-by-line staggered reveal on load for Hero headline (using overflow-hidden wrapper with motion.div y: '100%' -> '0%')",
+      "Subtle 3D tilt / parallax effect on hero imagery or interactive Kaapi Davarah brass cup element",
+      "Slow editorial marquee with react-fast-marquee or CSS keyframes (speed: 35s, low-contrast brass/stone ribbon with origin tags)",
+      "Floating interactive 'Ask Sarai' AI Sommelier drawer with smooth slide-up animation and quick coffee pairing recommendations",
+      "Interactive menu category tabs with layoutId animated pill indicator"
+    ]
+  },
+  "image_urls": {
+    "hero_barista_pour": {
+      "url": "https://images.pexels.com/photos/16706997/pexels-photo-16706997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "hero",
+      "description": "Moody, warm atmospheric shot of barista pouring specialty brew in intimate cafe lighting with brass accents"
+    },
+    "latte_art_davarah": {
+      "url": "https://images.unsplash.com/photo-1534234757579-8ad69d218ad4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxlc3ByZXNzbyUyMHBvdXIlMjBkYXJrJTIwY2FmZSUyMGxhdHRlJTIwYXJ0JTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
+      "category": "story_and_craft",
+      "description": "Artisan espresso cup on weathered natural dark timber table with microfoam"
+    },
+    "syphon_slow_brew": {
+      "url": "https://images.pexels.com/photos/2159095/pexels-photo-2159095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "ritual_section",
+      "description": "Slow brewing extraction apparatus, laboratory precision meets ancient coffee craft"
+    },
+    "hands_craft_pour": {
+      "url": "https://images.pexels.com/photos/16541078/pexels-photo-16541078.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "menu_feature",
+      "description": "Close up of artisan hands executing velvety pour over espresso"
+    },
+    "cafe_interior_moody": {
+      "url": "https://images.unsplash.com/photo-1571404493864-729f131e6022?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHJvYXN0aW5nJTIwY2FmZSUyMGludGVyaW9yJTIwbW9kZXJuJTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
+      "category": "location_space",
+      "description": "Architectural shot of moody dark textured wall and intimate seating corner"
+    },
+    "overhead_twin_cups": {
+      "url": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMHBvdXIlMjBkYXJrJTIwY2FmZSUyMGxhdHRlJTIwYXJ0JTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
+      "category": "origins_showcase",
+      "description": "Overhead moody still life of deep glazed artisanal ceramic cups amidst lush botanical shadow"
+    }
+  },
+  "sections_and_components": {
+    "1_header_nav": {
+      "component": "Navbar",
+      "path": "src/components/Navbar.js",
+      "features": [
+        "Fixed at top with z-50 and crystal glassmorphism: backdrop-blur-xl bg-[#0B0908]/80 border-b border-[#E0A96D]/15",
+        "Original custom SVG logo mark: Minimal geometric representation of Indian coffee bean + Sarai archway",
+        "Visible desktop nav links: 'The Story', 'Microlots & Ritual', 'The Menu', 'Sanctuary & Hours'",
+        "Live status badge: 'OPEN TODAY • 07:30 — 23:00 IST' with animated pulse dot in warm emerald/amber",
+        "Primary action button: 'Reserve a Table / Order Ritual' with data-testid='nav-reserve-button'",
+        "Quick launcher button for 'Ask Sarai AI' with subtle brass ring glow"
+      ]
+    },
+    "2_hero_section": {
+      "component": "Hero",
+      "path": "src/components/Hero.js",
+      "features": [
+        "Masked line-by-line kinetic headline reveal: 'A SANCTUARY FOR THE RESTLESS PALATE.' with subtext 'Ancient Indian spice routes meet third-wave roasting in Indiranagar, Bengaluru.'",
+        "Live coordinates badge: '12.9716° N, 77.6412° E // ELEVATION 920M'",
+        "Asymmetrical split layout: left column contains poetic manifesto & primary CTAs ('Explore Tasting Menu', 'Ask AI Barista'); right column contains spotlighted hero photography with clipping frame & floating micro-card with today's roast metrics (Chikmagalur Estate #44, Washed Selection 795, Notes: Wild Fig, Cacao Husk, Cardamom Blossom)",
+        "Parallax depth and subtle interactive mouse tilt effect"
+      ]
+    },
+    "3_editorial_marquee": {
+      "component": "MarqueeRibbon",
+      "path": "src/components/MarqueeRibbon.js",
+      "features": [
+        "Subtle, slow editorial river drifting across the screen (not a flashy ticker)",
+        "Pale brass / warm amber text on deep obsidian with separator glyphs (✦, ॐ, ◈)",
+        "Phrases: 'SHADE-GROWN WESTERN GHATS MICROLOTS', 'THE 18-HOUR COLD DRIP DRUM', 'COPPER KAAPI EXTRACTION', 'ETHICAL FARMER TRADE DIRECT FROM CHIKMAGALUR & ARAKU', 'RESTING HOUSE FOR TRAVELLERS'"
+      ]
+    },
+    "4_the_story": {
+      "component": "StorySection",
+      "path": "src/components/StorySection.js",
+      "features": [
+        "Narrative arc: What is 'Sarai'? In 16th century Hindustan, a Sarai was a refuge where caravans rested, exchanging stories over brewed spices and dark water.",
+        "Today's rebirth: Elevating Indian Robusta and Arabica from misunderstood commodities into world-class competition-grade microlots.",
+        "Interactive comparison slider or multi-tab reveal: 'The Bean', 'The Soil', 'The Extraction'.",
+        "Asymmetrical Swiss-style bento arrangement with high-density metrics and warm dark materials."
+      ]
+    },
+    "5_the_ritual_and_process": {
+      "component": "RitualSection",
+      "path": "src/components/RitualSection.js",
+      "features": [
+        "Showcase of 4 signature brew methods with step-by-step extraction art:",
+        "Method 1: 'The Royal Kaapi Meter' — Aerated through traditional brass Davarah-Tumbler from a height of 2 feet for micro-velvet crema.",
+        "Method 2: 'Smoked Jaggery Kyoto Drip' — 12-hour chilled tower extraction through organic wild palmyra palm nectar.",
+        "Method 3: 'Monsooned Malabar Aeropress' — Naturally aged ocean winds swell beans to pale gold, revealing earthy hazelnut and cigar leaf.",
+        "Method 4: 'Saffron & Pistachio Espresso Tonic' — Double shot of washed Baba Budangiri espresso layered over house saffron-infused tonic and orange oils.",
+        "Interactive temperature, grind micron, and brew-time dial for each method."
+      ]
+    },
+    "6_interactive_menu": {
+      "component": "MenuSection",
+      "path": "src/components/MenuSection.js",
+      "features": [
+        "Category tabs with animated pill: 'Signature Brews', 'Estate Filter Coffees', 'Espresso Atelier', 'Cold Extractions', 'Small Bakes & Plates'",
+        "All demo prices in INR (₹) with realistic specialty pricing (e.g. ₹280 - ₹480)",
+        "Each item features: title, regional estate source, roast level badge, flavor profile notes (e.g., 'Toffee • Tamarind Glaze • Star Anise'), and dietary badges (V, GF, Single-Origin)",
+        "Search & flavor filter (e.g. 'Fruity', 'Chocolaty', 'Spiced', 'Decaf option')",
+        "Order / Taste note button triggering toast notification with sonner"
+      ]
+    },
+    "7_ai_assistant_widget": {
+      "component": "AiChatWidget",
+      "path": "src/components/AiChatWidget.js",
+      "features": [
+        "Floating launcher: 'Ask Sarai — AI Coffee Sommelier' with glowing ring and icon (data-testid='ai-chat-launcher')",
+        "Expandable modal drawer with luxury warm dark design: 'What are you in the mood for?'",
+        "Ready-to-ask quick prompts: 'I want something sweet without refined sugar', 'What is your highest caffeine brew?', 'Best pairing for Monsoon season', 'Explain Kaapi vs Flat White'",
+        "Interactive intelligent mocked response engine with instant answers, brewing suggestions, and direct menu item highlight cards",
+        "Clear extensible framework ready for OpenRouter API integration: clean client function 'sendPromptToOpenRouter(prompt)' with mock fallback",
+        "Close button and sound toggle indicator"
+      ]
+    },
+    "8_location_and_sanctuary": {
+      "component": "LocationHours",
+      "path": "src/components/LocationHours.js",
+      "features": [
+        "Flagship address: 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038",
+        "Daily hours grid (Mon-Sun) with live 'Current Status: Open Now' indicator",
+        "Interactive Table Reservation / Tasting Room booking dialog with date picker, guest count, and time slot",
+        "Amenities tags: 'Complimentary High-Speed Fiber', 'Vinyl Listening Corner', 'Pet Friendly Courtyard', 'Valet Available', 'Cupping Table Bookings'"
+      ]
+    },
+    "9_footer": {
+      "component": "Footer",
+      "path": "src/components/Footer.js",
+      "features": [
+        "Dramatic contrast shift: rich charcoal obsidian background",
+        "Massive statement typography: 'COME AS WANDERERS, LEAVE AS ROASTERS.'",
+        "Newsletter signup for limited-batch microlot drops with email validation & sonner feedback",
+        "Curated Spotify playlist embed link: 'Sarai Night Sessions // Lo-fi Sitar & Dusty Beats'",
+        "Copyright, social links (Instagram @sarai.coffee, Substack, Roaster Guild)"
+      ]
+    }
+  },
+  "testing_attributes": {
+    "data_testids_required": [
+      "nav-brand-logo",
+      "nav-menu-link",
+      "nav-story-link",
+      "nav-ritual-link",
+      "nav-location-link",
+      "nav-reserve-button",
+      "nav-ai-chat-button",
+      "hero-explore-menu-cta",
+      "hero-ask-ai-cta",
+      "menu-category-tab-signature",
+      "menu-category-tab-filter",
+      "menu-category-tab-espresso",
+      "menu-category-tab-cold",
+      "menu-category-tab-bakes",
+      "menu-search-input",
+      "menu-item-card",
+      "menu-item-order-button",
+      "ritual-step-selector",
+      "reservation-form-name",
+      "reservation-form-phone",
+      "reservation-form-date",
+      "reservation-form-guests",
+      "reservation-form-submit",
+      "ai-chat-launcher",
+      "ai-chat-drawer",
+      "ai-chat-input",
+      "ai-chat-send-btn",
+      "ai-quick-prompt-chip",
+      "footer-newsletter-input",
+      "footer-newsletter-submit"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install 'lenis' or use custom smooth scroll provider so the landing page has weighted, award-winning momentum.",
+    "Add Google Fonts link in public/index.html with Cormorant Garamond, Plus Jakarta Sans, Playfair Display, and Space Mono.",
+    "Ensure dark theme is primary default (deep obsidian #0B0908, with amber #E0A96D and brass #C89D5C accents). Never flash unstyled white.",
+    "Do NOT use generic Inter or purple gradients anywhere. All borders must be subtle brass hairlines (border-amber-900/30 or border-stone-800).",
+    "All prices must be in Indian Rupees (₹) with authentic specialty coffee pricing (₹240 to ₹450).",
+    "Implement the 'Ask Sarai' AI chat widget with rich mocked responses for flavor profiles, bean origin info, and pairing advice, with code structure cleanly prepared for OpenRouter API keys.",
+    "Ensure 100% responsiveness on mobile (menu drawer, stacked hero, sticky mobile bar, touch-friendly tabs).",
+    "Verify all interactive buttons, inputs, and tabs have their specified data-testid attributes."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, on-distribution outputs. In frontend design, this creates what users call the AI slop aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g. 'transition: all'). This breaks transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container (no .App { text-align: center; }). This disrupts the natural reading flow.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 for icons.",
+    "Every interaction needs micro-animations: hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "Main agent relies on provided image URLs. Missing categories = main agent will use placeholder text which is FORBIDDEN.",
+    "Use sonner for toasts (already installed in package.json)."
+  ]
+}
