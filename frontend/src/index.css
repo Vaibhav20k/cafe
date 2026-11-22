@@ -3,37 +3,37 @@
 @tailwind utilities;
 
 :root {
-    --background: 20 17% 4%;
-    --foreground: 40 33% 95%;
-    --card: 20 12% 8%;
-    --card-foreground: 40 33% 95%;
-    --popover: 20 17% 5%;
-    --popover-foreground: 40 33% 95%;
-    --primary: 33 66% 65%;
-    --primary-foreground: 20 40% 6%;
-    --secondary: 20 10% 12%;
-    --secondary-foreground: 40 25% 90%;
-    --muted: 20 10% 12%;
-    --muted-foreground: 36 10% 64%;
-    --accent: 20 14% 12%;
-    --accent-foreground: 40 33% 95%;
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 33 40% 65% / 0.14;
-    --input: 33 40% 65% / 0.2;
-    --ring: 33 66% 65%;
+    --background: 40 33% 97%;
+    --foreground: 22 18% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 22 18% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 22 18% 9%;
+    --primary: 33 50% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 31% 93%;
+    --secondary-foreground: 22 18% 9%;
+    --muted: 38 33% 94%;
+    --muted-foreground: 26 9% 44%;
+    --accent: 36 58% 91%;
+    --accent-foreground: 22 18% 9%;
+    --destructive: 12 56% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 33 50% 52% / 0.22;
+    --input: 33 50% 52% / 0.3;
+    --ring: 33 50% 52%;
     --radius: 0.5rem;
 }
 
 html {
-    background: #0B0908;
+    background: #FBF9F5;
     scroll-behavior: auto;
 }
 
 body {
     margin: 0;
-    background: #0B0908;
-    color: #F5F3EF;
+    background: #FBF9F5;
+    color: #1A1512;
     font-family: "Plus Jakarta Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -41,23 +41,23 @@ body {
 }
 
 ::selection {
-    background: #E0A96D;
-    color: #0B0908;
+    background: #C28C48;
+    color: #FFFFFF;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #0B0908;
+    background: #F3EFE8;
 }
 ::-webkit-scrollbar-thumb {
-    background: #2A221B;
+    background: #D9CBB2;
     border-radius: 8px;
-    border: 2px solid #0B0908;
+    border: 2px solid #F3EFE8;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #C89D5C;
+    background: #C28C48;
 }
 
 .grain {
@@ -65,7 +65,8 @@ body {
     inset: -50%;
     z-index: 90;
     pointer-events: none;
-    opacity: 0.05;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     animation: grain-shift 9s steps(6) infinite;
 }
@@ -79,7 +80,7 @@ body {
 }
 
 .hairline-b {
-    border-bottom: 1px solid rgba(224, 169, 109, 0.12);
+    border-bottom: 1px solid rgba(194, 140, 72, 0.22);
 }
 
 .mask-line {
@@ -92,7 +93,7 @@ body {
 .dotted-leader {
     flex: 1 1 auto;
     margin: 0 0.75rem;
-    border-bottom: 1px dotted rgba(224, 169, 109, 0.28);
+    border-bottom: 1px dotted rgba(194, 140, 72, 0.35);
     transform: translateY(-4px);
 }
 
@@ -100,7 +101,7 @@ body {
     width: 5px;
 }
 .chat-scroll::-webkit-scrollbar-thumb {
-    background: #2A221B;
+    background: #E4D9C6;
 }
 
 @media (prefers-reduced-motion: reduce) {

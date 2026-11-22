@@ -23,22 +23,16 @@ export default function Preloader({ onDone }) {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-obsidian"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-linen"
         initial={{ y: 0 }}
         animate={leaving ? { y: "-100%" } : { y: 0 }}
         transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
       >
         <div className="flex flex-col items-center gap-5">
-          <motion.svg
-            width="56"
-            height="56"
-            viewBox="0 0 32 32"
-            fill="none"
-            initial={{ opacity: 1 }}
-          >
+          <motion.svg width="56" height="56" viewBox="0 0 32 32" fill="none">
             <motion.path
               d="M9 27V15.5a7 7 0 0 1 14 0V27"
-              stroke="#E0A96D"
+              stroke="#C28C48"
               strokeWidth="2"
               strokeLinecap="round"
               initial={{ pathLength: 0 }}
@@ -49,14 +43,14 @@ export default function Preloader({ onDone }) {
               cx="16"
               cy="13"
               r="2.2"
-              fill="#E0A96D"
+              fill="#C28C48"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.8, duration: 0.4 }}
             />
             <motion.path
               d="M5 27h22"
-              stroke="#E0A96D"
+              stroke="#C28C48"
               strokeWidth="2"
               strokeLinecap="round"
               initial={{ pathLength: 0 }}
@@ -66,7 +60,7 @@ export default function Preloader({ onDone }) {
           </motion.svg>
           <div className="overflow-hidden">
             <motion.p
-              className="font-display text-2xl tracking-[0.35em] text-cream"
+              className="font-display text-2xl tracking-[0.35em] text-ink"
               initial={{ y: "110%" }}
               animate={{ y: "0%" }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
@@ -75,7 +69,7 @@ export default function Preloader({ onDone }) {
             </motion.p>
           </div>
           <motion.p
-            className="font-mono text-[10px] uppercase tracking-[0.4em] text-brass/60"
+            className="font-mono text-[10px] uppercase tracking-[0.4em] text-stonemute"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.5 }}

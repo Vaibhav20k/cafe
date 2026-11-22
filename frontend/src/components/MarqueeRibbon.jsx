@@ -13,10 +13,10 @@ export default function MarqueeRibbon() {
     <div aria-hidden={ariaHidden} className="flex shrink-0 items-center">
       {PHRASES.map((p, i) => (
         <span key={i} className="flex items-center">
-          <span className="whitespace-nowrap px-8 font-mono text-[12px] uppercase tracking-[0.35em] text-brass/50">
+          <span className="whitespace-nowrap px-8 font-mono text-[12px] font-medium uppercase tracking-[0.35em] text-brassantique">
             {p}
           </span>
-          <span className="text-brass/40 text-xs">✦</span>
+          <span className="text-terracotta text-xs">✦</span>
         </span>
       ))}
     </div>
@@ -24,7 +24,7 @@ export default function MarqueeRibbon() {
 
   return (
     <motion.div
-      className="relative overflow-hidden border-y border-brass/10 py-5"
+      className="relative overflow-hidden border-y border-brassantique/20 bg-linen2/70 py-5"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.4 }}

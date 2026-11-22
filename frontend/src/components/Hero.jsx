@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
 import { IMAGES } from "../data/cafe";
 
-const lineReveal = (text, ready, i, cls = "") => (
+const lineReveal = (children, ready, i, cls = "") => (
   <span key={i} className="mask-line">
     <motion.span
       className={`block ${cls}`}
@@ -10,7 +10,7 @@ const lineReveal = (text, ready, i, cls = "") => (
       animate={ready ? { y: "0%" } : {}}
       transition={{ duration: 1.05, delay: 0.15 + i * 0.13, ease: [0.22, 1, 0.36, 1] }}
     >
-      {text}
+      {children}
     </motion.span>
   </span>
 );
@@ -34,12 +34,18 @@ export default function Hero({ ready, onAsk }) {
     my.set((e.clientY - r.top) / r.height - 0.5);
   };
 
+  const scrollToMenu = () => {
+    const el = document.getElementById("menu");
+    if (window.__lenis) window.__lenis.scrollTo(el, { offset: -64, duration: 1.5 });
+    else el?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section ref={secRef} className="relative min-h-screen overflow-hidden flex items-center">
+    <section ref={secRef} className="relative min-h-screen overflow-hidden flex items-center bg-linen">
       <motion.span
         aria-hidden
         style={{ y: ghostY }}
-        className="pointer-events-none select-none absolute -right-[6%] top-[8%] font-dev text-[38vw] leading-none text-cream opacity-[0.035]"
+        className="pointer-events-none select-none absolute -right-[6%] top-[8%] font-dev text-[38vw] leading-none text-brassantique opacity-[0.07]"
       >
         सराय
       </motion.span>
@@ -53,23 +59,23 @@ export default function Hero({ ready, onAsk }) {
               animate={ready ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-brass/80">
-                Est. 2019 — Indiranagar, Bengaluru
+              <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-brassantique">
+                Est. 2019 — Demo Sanctuary
               </span>
-              <span className="hidden sm:block h-px w-16 bg-brass/30" />
-              <span className="font-mono text-[11px] tracking-[0.2em] text-faint">
-                12.9716° N / 77.6412° E — ELEV 920M
+              <span className="hidden sm:block h-px w-16 bg-brassantique/40" />
+              <span className="font-mono text-[11px] tracking-[0.2em] text-caption">
+                00.0000° N / 00.0000° E — ELEV 000M [DEMO]
               </span>
             </motion.div>
           </div>
 
-          <h1 className="font-display leading-[1.02] tracking-tight text-cream text-[clamp(2.75rem,6vw,4.75rem)]">
+          <h1 className="font-display leading-[1.02] tracking-tight text-ink text-[clamp(2.75rem,6vw,4.75rem)]">
             {lineReveal("A sanctuary for the", ready, 0)}
-            {lineReveal("restless", ready, 1, "italic text-brass font-serif2 font-light")}
+            {lineReveal("restless", ready, 1, "italic text-brassantique font-serif2 font-light")}
             {lineReveal(
               <span className="flex items-baseline gap-4 sm:gap-6">
                 palate.
-                <span className="font-dev text-[0.42em] text-brass/70">सराय — विश्राम</span>
+                <span className="font-dev text-[0.42em] text-brassantique/80">सराय — विश्राम</span>
               </span>,
               ready,
               2
@@ -78,7 +84,7 @@ export default function Hero({ ready, onAsk }) {
 
           <div className="overflow-hidden">
             <motion.p
-              className="mt-8 max-w-md text-base leading-relaxed text-stoneish sm:text-lg"
+              className="mt-8 max-w-md text-base leading-relaxed text-roast sm:text-lg"
               initial={{ opacity: 0, y: 24 }}
               animate={ready ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.9, delay: 0.65 }}
@@ -97,20 +103,16 @@ export default function Hero({ ready, onAsk }) {
             >
               <button
                 data-testid="hero-explore-menu-cta"
-                onClick={() => {
-                  const el = document.getElementById("menu");
-                  if (window.__lenis) window.__lenis.scrollTo(el, { offset: -64, duration: 1.5 });
-                  else el?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="group relative overflow-hidden rounded-full bg-brass px-8 py-4 font-mono text-[12px] uppercase tracking-[0.2em] text-obsidian cursor-pointer"
+                onClick={scrollToMenu}
+                className="group relative overflow-hidden rounded-full bg-brassantique px-8 py-4 font-mono text-[12px] font-semibold uppercase tracking-[0.2em] text-ink cursor-pointer"
               >
-                <span className="relative z-10 transition-colors duration-300 group-hover:text-cream">Explore the Menu</span>
-                <span className="absolute inset-0 translate-y-full bg-obsidian transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-linen">Explore the Menu</span>
+                <span className="absolute inset-0 translate-y-full bg-ink transition-transform duration-500 ease-out group-hover:translate-y-0" />
               </button>
               <button
                 data-testid="hero-ask-ai-cta"
                 onClick={onAsk}
-                className="rounded-full border border-brass/40 px-8 py-4 font-mono text-[12px] uppercase tracking-[0.2em] text-brass hover:bg-brass/10 transition-colors duration-300 cursor-pointer"
+                className="rounded-full border border-brassantique/60 px-8 py-4 font-mono text-[12px] uppercase tracking-[0.2em] text-roast hover:bg-[#F5EAD9] transition-colors duration-300 cursor-pointer"
               >
                 Ask the AI Barista
               </button>
@@ -129,24 +131,24 @@ export default function Hero({ ready, onAsk }) {
             animate={ready ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="overflow-hidden rounded-t-[999px] rounded-b-2xl border border-brass/20">
+            <div className="overflow-hidden rounded-t-[999px] rounded-b-2xl border border-brassantique/25 shadow-xl shadow-brassantique/10">
               <motion.img
                 src={IMAGES.hero}
-                alt="Barista pouring specialty coffee in moody warm light"
+                alt="Barista pouring specialty coffee in warm natural light"
                 style={{ y: imgY, scale: 1.18 }}
                 className="h-[520px] w-full object-cover sm:h-[560px]"
               />
             </div>
             <motion.div
-              className="absolute -left-6 bottom-10 w-56 rounded-xl border border-brass/20 bg-glass p-4 backdrop-blur-xl sm:-left-12"
+              className="absolute -left-6 bottom-10 w-56 rounded-xl border border-brassantique/30 bg-paper/92 p-4 shadow-lg backdrop-blur-xl sm:-left-12"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, duration: 0.9 }}
             >
               <div className="animate-float-soft">
-                <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-brass/80">Today's Roast</p>
-                <p className="mt-2 font-display text-sm text-cream">Chikmagalur Estate #44</p>
-                <p className="mt-1 font-mono text-[10px] leading-relaxed text-stoneish">
+                <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-brassantique">Today's Roast</p>
+                <p className="mt-2 font-display text-sm text-ink">Chikmagalur Estate #44</p>
+                <p className="mt-1 font-mono text-[10px] leading-relaxed text-stonemute">
                   WASHED 795 — Batch 019
                   <br />
                   FIG / CACAO / CARDAMOM
@@ -163,10 +165,10 @@ export default function Hero({ ready, onAsk }) {
         animate={ready ? { opacity: 1 } : {}}
         transition={{ delay: 1.5 }}
       >
-        <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-faint">Scroll</span>
-        <div className="h-12 w-px overflow-hidden bg-brass/15">
+        <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-caption">Scroll</span>
+        <div className="h-12 w-px overflow-hidden bg-brassantique/20">
           <motion.span
-            className="block h-1/2 w-px bg-brass"
+            className="block h-1/2 w-px bg-brassantique"
             animate={{ y: ["-100%", "220%"] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           />

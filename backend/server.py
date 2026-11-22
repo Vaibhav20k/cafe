@@ -106,10 +106,10 @@ MENU = [
 ]
 
 CAFE_INFO = {
-    "name": "SARAI",
-    "tagline": "Specialty Indian Coffee House",
-    "address": "100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038",
-    "hours": "Open every day, 07:30 - 23:00 IST",
+    "name": "SARAI (सराय) [DEMO]",
+    "tagline": "Specialty Indian Coffee House — demo sanctuary",
+    "address": "404 Fictional Spice Lane, Suite #00, Caravan Quarter, Demo City 560000 (fictional demo address)",
+    "hours": "Open every day, 07:30 - 23:00 IST (demo hours)",
     "origins": "Chikmagalur, Araku Valley, Coorg, Baba Budangiri, Malabar",
 }
 

@@ -47,19 +47,34 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        linen: '#FBF9F5',
+        linen2: '#F3EFE8',
+        paper: '#FFFFFF',
+        sand: '#F5F1EA',
+        creamlift: '#FFFDF9',
+        ink: '#1A1512',
+        roast: '#4A3E36',
+        stonemute: '#7A6E65',
+        caption: '#9C8F85',
+        brassantique: '#C28C48',
+        brassbright: '#DCA764',
+        terracotta: '#B94E34',
+        olive: '#596048',
+        espresso: '#14110F',
+        espressocard: '#1C1815',
+        brass: {
+          DEFAULT: '#C28C48',
+          deep: '#DCA764',
+        },
         obsidian: '#0B0908',
         coal: '#141210',
         ember: '#1A1715',
-        brass: {
-          DEFAULT: '#E0A96D',
-          deep: '#C89D5C',
-        },
-        terra: '#C2593F',
-        ochre: '#D97706',
         cream: '#F5F3EF',
         stoneish: '#A8A29E',
         faint: '#78716C',
-        glass: 'rgba(18,15,13,0.72)'
+        terra: '#C2593F',
+        ochre: '#D97706',
+        glass: 'rgba(255,253,249,0.85)'
       },
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],
@@ -80,11 +95,6 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-8px)' },
         },
-        steam: {
-          '0%': { transform: 'translateY(0) scaleX(1)', opacity: '0' },
-          '25%': { opacity: '0.7' },
-          '100%': { transform: 'translateY(-42px) scaleX(1.6)', opacity: '0' },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -92,7 +102,6 @@ module.exports = {
         marquee: 'marquee 42s linear infinite',
         'pulse-dot': 'pulse-dot 1.8s ease-in-out infinite',
         'float-soft': 'float-soft 5s ease-in-out infinite',
-        steam: 'steam 2.6s ease-out infinite',
       }
     }
   },

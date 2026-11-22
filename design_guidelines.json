@@ -1,241 +1,349 @@
 {
-  "project_name": "SARAI — Specialty Indian Coffee House",
-  "archetype": "ARCHETYPE 5: LUXURY & MOODY ESPRESSO BAR WITH WARM MINIMALISM AND MODERN INDIAN RESTRAINT",
-  "app_type": "single_page_marketing_site",
-  "concept": "SARAI (सराय — historically a sanctuary and caravan resting house for ancient travellers along the Grand Trunk Road and spice routes). Fused into a hyper-modern, award-winning specialty coffee atelier spotlighting single-origin Indian microlots (Chikmagalur, Araku Valley, Monsooned Malabar, Coorg) brewed with sculptural precision (Brass South Indian Kaapi Syphon, Nitro Pour-over, Smoked Jaggery Espresso, Cardamom Husk Cold Brew).",
-  "design_dna": {
-    "vibe_fusion": "Warm Minimalist architecture + Dark & Moody night espresso bar + Bold modern typographic tension",
-    "inspiration_level": "Awwwards Site of the Day / Godly.website level. Zero AI-slop: NO purple gradients, NO centered Inter cards, NO generic stock photo boxes, NO default bootstrap columns",
-    "visual_texture": "Subtle film grain / noise overlay, warm obsidian (#0C0A09), terracotta/burnt ochre accents (#D97706 / #C2410C / #E0A96D), brass & raw linen, hairline borders with 10-15% opacity, and masked line-by-line editorial reveals"
+  "_meta": {
+    "title": "SARAI — Specialty Indian Coffee House Redesign to Light Theme",
+    "version": "2.0.0",
+    "theme_default": "light",
+    "author": "E1 Creative Designer",
+    "target_file": "/app/design_guidelines.json"
+  },
+  "design_philosophy": {
+    "concept": "Warm Sunlit Indian Verandah meets Third-Wave Roastery",
+    "narrative_arc": "From the morning sun pouring through teak jali screens to the warm terracotta warmth of Bengaluru's courtyards. In ancient Hindustan, a 'Sarai' was an oasis along trade routes where wanderers rested. The light theme reimagines SARAI as a sun-washed haven of hand-pressed linen, creamy steamed milk, warm aged brass, and deep roasted coffee bean ink.",
+    "emotional_tone": "Warm, tactile, grounded, artisanal, unhurried, literary, deeply Indian yet fiercely modern.",
+    "archetype": "Organic & Earthy (Craft System Archetype 1) with Swiss editorial typographic discipline.",
+    "anti_ai_slop_rules": [
+      "NO purple/violet gradients (#7351B7 is strictly forbidden).",
+      "NO generic centered card layouts or uniform Bootstrap columns.",
+      "NO Inter, Roboto, or Space Grotesk for headings — rely strictly on Playfair Display, Cormorant Garamond, and Rozha One.",
+      "Generous spacing: 2x-3x typical density (py-28 to py-40 for major sections).",
+      "Asymmetry and tension: Roman arch image containers, diagonal scroll shifts, overlapping sticky ritual displays.",
+      "Contrast bands: Hero, Story, Ritual, Menu, and Visit live in luxurious warm light canvas; Footer retains dramatic deep espresso (#120F0D) anchor as deliberate contrast."
+    ]
+  },
+  "color_system": {
+    "theme": "light",
+    "base_surfaces": {
+      "page_background": "#FBF9F5",
+      "page_background_secondary": "#F3EFE8",
+      "surface_card": "#FFFFFF",
+      "surface_card_muted": "#F5F1EA",
+      "surface_elevated": "#FFFDF9",
+      "contrast_band_footer": "#14110F",
+      "contrast_band_footer_card": "#1C1815"
+    },
+    "text_colors": {
+      "espresso_ink_primary": "#1A1512",
+      "roast_secondary": "#4A3E36",
+      "warm_stone_muted": "#7A6E65",
+      "faint_caption": "#9C8F85",
+      "footer_text_primary": "#FBF9F5",
+      "footer_text_secondary": "#D8CFBE"
+    },
+    "accents": {
+      "brass_antique": "#C28C48",
+      "brass_bright": "#DCA764",
+      "brass_soft_bg": "#F5EAD9",
+      "brass_border": "rgba(194, 140, 72, 0.28)",
+      "terracotta": "#B94E34",
+      "terracotta_soft_bg": "#FCEEE9",
+      "monsoon_olive": "#596048",
+      "live_emerald": "#15803D"
+    },
+    "hairlines_and_borders": {
+      "border_default": "rgba(194, 140, 72, 0.22)",
+      "border_subtle": "rgba(74, 62, 54, 0.10)",
+      "border_strong": "rgba(194, 140, 72, 0.45)",
+      "dotted_leader": "rgba(194, 140, 72, 0.35)"
+    },
+    "theme_tokens_tailwind": {
+      "background": "#FBF9F5",
+      "foreground": "#1A1512",
+      "card": "#FFFFFF",
+      "card_foreground": "#1A1512",
+      "popover": "#FFFFFF",
+      "popover_foreground": "#1A1512",
+      "primary": "#C28C48",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#F3EFE8",
+      "secondary_foreground": "#1A1512",
+      "muted": "#F5F1EA",
+      "muted_foreground": "#7A6E65",
+      "accent": "#F5EAD9",
+      "accent_foreground": "#C28C48",
+      "destructive": "#B94E34",
+      "destructive_foreground": "#FFFFFF",
+      "border": "rgba(194, 140, 72, 0.22)",
+      "input": "rgba(194, 140, 72, 0.30)",
+      "ring": "#C28C48"
+    }
   },
   "typography": {
-    "headline_font": "Playfair Display (or Cormorant Garamond / Syne via Google Fonts link) with serif italic accents, tracking-tight, leading-none",
-    "subheading_font": "Cabinet Grotesk or Plus Jakarta Sans / Outfit for crisp modern architectural clarity",
-    "body_font": "Plus Jakarta Sans or Manrope (clean, warm, highly legible)",
-    "mono_accent_font": "JetBrains Mono / Space Mono (for bean elevation, microlot coordinates, tasting notes, roast batch #, brewing ratios)",
-    "google_fonts_embed": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap",
-    "rules": [
-      "H1 ceiling strictly text-4xl sm:text-5xl lg:text-6xl with leading-[1.05] and tracking-tight. NEVER use text-7xl or text-8xl for main headings.",
-      "Overlines / Eyebrows: uppercase + text-[11px] or text-xs + tracking-[0.25em] font-mono text-amber-500/80",
-      "Menu item titles: font-serif text-xl sm:text-2xl text-stone-100",
-      "Prices: font-mono text-amber-400 font-medium"
-    ]
+    "fonts": {
+      "display": "\"Playfair Display\", Georgia, serif",
+      "serif_editorial": "\"Cormorant Garamond\", Garamond, serif",
+      "sans_body": "\"Plus Jakarta Sans\", -apple-system, BlinkMacSystemFont, sans-serif",
+      "mono_data": "\"Space Mono\", monospace",
+      "devanagari_accent": "\"Rozha One\", serif"
+    },
+    "hierarchy_rules": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-display tracking-tight leading-[1.04]",
+      "h2_section": "text-3xl sm:text-4xl lg:text-5xl font-display tracking-tight leading-[1.1]",
+      "h3_card_ritual": "text-xl sm:text-2xl font-display text-espresso_ink",
+      "h4_item_title": "text-lg sm:text-xl font-display text-espresso_ink",
+      "body_lead": "text-base sm:text-lg font-sans text-roast_secondary leading-relaxed",
+      "body_regular": "text-sm sm:text-base font-sans text-warm_stone_muted leading-relaxed",
+      "editorial_quote": "font-serif_editorial text-xl sm:text-2xl italic leading-relaxed text-roast_secondary",
+      "mono_label": "font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-brass_antique",
+      "devanagari_ghost": "font-dev text-[32vw] sm:text-[28vw] leading-none text-brass_antique/8 select-none pointer-events-none"
+    }
   },
-  "colors": {
-    "background_dark": "#0B0908",
-    "surface_card": "#141210",
-    "surface_elevated": "#1A1715",
-    "surface_glass": "rgba(18, 15, 13, 0.72)",
-    "primary_amber": "#E0A96D",
-    "accent_brass": "#C89D5C",
-    "accent_terracotta": "#C2593F",
-    "accent_ochre": "#D97706",
-    "border_subtle": "rgba(224, 169, 109, 0.12)",
-    "border_active": "rgba(224, 169, 109, 0.35)",
-    "text_main": "#F5F3EF",
-    "text_muted": "#A8A29E",
-    "text_faint": "#78716C",
-    "forbidden_colors": ["#7351B7", "generic vibrant purple", "neon cyan", "pure white over saturated gradient"]
+  "demo_data_specifications": {
+    "explicit_user_directive": "ALL data must read as DEMO / sample / fictional placeholder, especially address and coordinates — nothing that looks like a real live address/coords.",
+    "cafe_constants_update": {
+      "name": "SARAI (सराय) [DEMO]",
+      "address": "404 Fictional Spice Lane, Suite #00, Caravan Quarter, Demo City 560000",
+      "coords": "00.0000° N, 00.0000° E — ELEV 000M [DEMO COORD]",
+      "mapsUrl": "https://maps.google.com/?q=fictional+demo+cafe",
+      "phone_placeholder": "+91 00000 00000 (Demo only)",
+      "curfew_note": "Demo roastery — visits and seatings are simulated.",
+      "cupping_note": "Demo cupping tables simulate every Sunday at 10:00 — seats are virtual."
+    },
+    "menu_disclaimer": "All prices, roast dates, and microlot origins are simulated demo entries in ₹ for sensory demonstration."
   },
-  "motion_and_smooth_scroll": {
-    "smooth_scrolling": "Lenis via 'lenis' or custom requestAnimationFrame smooth momentum wrapper for buttery weighted scroll",
-    "framer_motion_patterns": [
-      "Masked line-by-line staggered reveal on load for Hero headline (using overflow-hidden wrapper with motion.div y: '100%' -> '0%')",
-      "Subtle 3D tilt / parallax effect on hero imagery or interactive Kaapi Davarah brass cup element",
-      "Slow editorial marquee with react-fast-marquee or CSS keyframes (speed: 35s, low-contrast brass/stone ribbon with origin tags)",
-      "Floating interactive 'Ask Sarai' AI Sommelier drawer with smooth slide-up animation and quick coffee pairing recommendations",
-      "Interactive menu category tabs with layoutId animated pill indicator"
-    ]
+  "scroll_driven_storytelling_prescriptions": {
+    "1_global_scroll_progress": {
+      "component": "ScrollProgressBar",
+      "spec": "A top-docked 3px high progress bar (z-[60]) animated using framer-motion useScroll() -> scaleX. Background gradient: from #C28C48 via #DCA764 to #B94E34. Stretches left-to-right as user scrolls."
+    },
+    "2_sticky_ritual_storytelling": {
+      "component": "RitualSection",
+      "spec": "Replace the static grid with an editorial sticky scrollytelling container: On desktop (lg), left column holds sticky cards/tabs with active step progress, while right column features a large arched image showcase with floating brass dials, steam particles, and step-by-step extraction breakdown. As the user scrolls, active step smoothly synchronizes with tactile click/scroll snapping."
+    },
+    "3_word_by_word_headline_reveals": {
+      "component": "Hero, StorySection, RitualSection",
+      "spec": "Scroll-linked / in-view word reveals using motion.span with staggered y: [20, 0] and opacity: [0, 1] with cubic-bezier(0.22, 1, 0.36, 1), wrapping key phrases so words float up from crisp masked baselines."
+    },
+    "4_dual_speed_parallax_image_pairs": {
+      "component": "StorySection & VisitSection",
+      "spec": "Parallax image wrappers using useScroll + useTransform: left image shifts [-12%, 12%], right image shifts [14%, -14%] to generate genuine optical depth as user traverses the story."
+    },
+    "5_devanagari_ghost_floating": {
+      "component": "Hero & MenuSection background",
+      "spec": "Massive 'सराय' (Sarai) and 'कापी' (Kaapi) glyphs in Rozha One softly floating and translating down by 30-45% on scroll, colored at 0.05-0.08 opacity brass antique against warm cream paper."
+    }
+  },
+  "section_by_section_light_theme_notes": {
+    "Preloader": {
+      "background": "#FBF9F5 (Linen paper)",
+      "text": "#1A1512",
+      "brass_stroke": "#C28C48",
+      "tagline": "Specialty Indian Coffee House — Demo Sanctuary"
+    },
+    "Navbar": {
+      "surface_idle": "bg-[#FBF9F5]/85 backdrop-blur-xl border-b border-[#C28C48]/15",
+      "surface_scrolled": "bg-[#FFFFFF]/90 backdrop-blur-2xl border-b border-[#C28C48]/25 shadow-sm shadow-[#C28C48]/5",
+      "logo_mark": "Antique brass #C28C48",
+      "brand_text": "#1A1512 with subtitle सराय in #C28C48",
+      "nav_links": "font-mono uppercase text-[#4A3E36] hover:text-[#C28C48] with brass line hover",
+      "open_pill": "border border-[#C28C48]/30 bg-[#F5EAD9]/60 text-[#1A1512]",
+      "ctas": {
+        "ask_sarai": "border border-[#C28C48]/50 text-[#C28C48] hover:bg-[#C28C48] hover:text-white",
+        "reserve": "bg-[#1A1512] text-[#FBF9F5] hover:bg-[#C28C48] hover:text-[#1A1512]"
+      },
+      "mobile_overlay": "bg-[#FBF9F5]/98 text-[#1A1512] border-b border-[#C28C48]/20"
+    },
+    "Hero": {
+      "surface": "bg-[#FBF9F5] text-[#1A1512]",
+      "ghost_devanagari": "Text 'सराय' in Rozha One, color #C28C48 at opacity 0.065, parallax y translation on scroll",
+      "sub_headline": "Demo Origin Coordinates: 00.0000° N / 00.0000° E — ELEV 000M [DEMO SANCTUARY]",
+      "headline": "A sanctuary for the <em class='italic font-serif_editorial font-light text-[#C28C48]'>restless</em> palate. <span class='font-dev text-[#C28C48]/80'>सराय</span>",
+      "description": "Ancient spice routes meet third-wave roasting. Single-origin Indian microlots, brewed slow in a resting house for travellers.",
+      "ctas": {
+        "primary": "rounded-full bg-[#C28C48] text-[#1A1512] font-semibold hover:bg-[#1A1512] hover:text-[#FBF9F5]",
+        "secondary": "rounded-full border border-[#C28C48]/60 text-[#4A3E36] hover:bg-[#F5EAD9]"
+      },
+      "arched_hero_card": {
+        "border": "border border-[#C28C48]/25 shadow-xl shadow-[#C28C48]/10",
+        "floating_badge": "bg-[#FFFFFF]/92 backdrop-blur-xl border border-[#C28C48]/30 p-4 rounded-xl shadow-lg"
+      }
+    },
+    "MarqueeRibbon": {
+      "surface": "border-y border-[#C28C48]/20 bg-[#F3EFE8]/70 py-4",
+      "text": "font-mono uppercase tracking-[0.35em] text-[#C28C48] text-[12px] font-medium",
+      "bullet": "text-[#B94E34] text-xs"
+    },
+    "StorySection": {
+      "surface": "bg-[#FBF9F5] text-[#1A1512]",
+      "headline": "In old Hindustan, a <em class='italic font-serif_editorial font-light text-[#C28C48]'>sarai</em> was where caravans rested — stories traded over spice and dark water.",
+      "metric_grid": {
+        "container": "rounded-2xl border border-[#C28C48]/20 bg-[#F3EFE8] divide-x divide-y divide-[#C28C48]/15",
+        "card": "bg-[#FFFFFF] p-6 hover:bg-[#FFFDF9] transition-colors",
+        "number": "text-[#C28C48] font-display text-3xl sm:text-4xl",
+        "label": "font-mono text-[10px] uppercase tracking-[0.2em] text-[#7A6E65]"
+      },
+      "tab_pill": "bg-[#C28C48] text-[#FFFFFF] shadow-sm",
+      "quote_card": "bg-[#FFFFFF] border border-[#C28C48]/20 p-6 rounded-2xl shadow-sm"
+    },
+    "RitualSection": {
+      "surface": "bg-[#F3EFE8] text-[#1A1512] border-y border-[#C28C48]/15",
+      "badge": "The Rituals — रीति",
+      "headline": "Four ways we refuse to <em class='italic font-serif_editorial font-light text-[#C28C48]'>hurry</em> a cup.",
+      "step_selector": "border-b border-[#C28C48]/15 hover:bg-[#FFFFFF]/50",
+      "active_step": "text-[#1A1512] bg-[#FFFFFF] shadow-sm rounded-xl border border-[#C28C48]/20",
+      "showcase_card": "rounded-2xl border border-[#C28C48]/25 bg-[#FFFFFF] shadow-lg overflow-hidden",
+      "dials": {
+        "track": "stroke-[#C28C48]/20",
+        "indicator": "stroke-[#C28C48]",
+        "text": "fill-[#1A1512]"
+      }
+    },
+    "MenuSection": {
+      "surface": "bg-[#FBF9F5] text-[#1A1512]",
+      "search_bar": "bg-[#FFFFFF] border border-[#C28C48]/30 text-[#1A1512] placeholder:text-[#9C8F85] focus:border-[#C28C48] shadow-sm",
+      "category_tabs": {
+        "active": "bg-[#C28C48] text-[#FFFFFF]",
+        "inactive": "border border-[#C28C48]/25 text-[#4A3E36] bg-[#FFFFFF] hover:bg-[#F5EAD9]"
+      },
+      "item_card": "border-b border-[#C28C48]/15 hover:bg-[#FFFFFF]/70 transition-colors p-5 rounded-xl",
+      "price": "text-[#C28C48] font-mono font-bold text-xl",
+      "tags": "bg-[#F5EAD9] text-[#C28C48] border border-[#C28C48]/30",
+      "order_button": "border border-[#C28C48]/50 text-[#C28C48] hover:bg-[#C28C48] hover:text-[#FFFFFF]"
+    },
+    "LocationHours": {
+      "surface": "bg-[#F3EFE8] text-[#1A1512]",
+      "demo_address_banner": "bg-[#FCEEE9] border border-[#B94E34]/30 text-[#B94E34] px-4 py-2 rounded-lg font-mono text-xs mb-6",
+      "hours_table": "bg-[#FFFFFF] rounded-2xl border border-[#C28C48]/20 divide-y divide-[#C28C48]/10 shadow-sm",
+      "reservation_form": "bg-[#FFFFFF] rounded-2xl border border-[#C28C48]/20 p-6 shadow-md",
+      "input_fields": "bg-[#FBF9F5] border border-[#C28C48]/30 text-[#1A1512] focus:border-[#C28C48] rounded-lg",
+      "submit_btn": "bg-[#C28C48] text-[#FFFFFF] hover:bg-[#1A1512] uppercase font-mono tracking-[0.2em]"
+    },
+    "Footer": {
+      "treatment": "DELIBERATE HIGH-CONTRAST LUXURY DARK BAND (#14110F obsidian-coffee) as prescribed in E1 Craft Rules for authority, grounding, and cinematic closure.",
+      "surface": "bg-[#14110F] text-[#FBF9F5] border-t border-[#C28C48]/25 pt-24 pb-12",
+      "headline": "Come as wanderers, <em class='italic font-serif_editorial font-light text-[#DCA764]'>leave as roasters.</em>",
+      "newsletter_input": "bg-[#201B18] border border-[#C28C48]/30 text-[#FBF9F5] placeholder:text-[#8E847C]",
+      "newsletter_submit": "bg-[#C28C48] text-[#14110F] hover:bg-[#FBF9F5] font-mono",
+      "demo_notice": "DEMO NOTICE: All addresses, hours, reservations, and coordinates displayed are purely fictional demonstrations."
+    },
+    "AiChatWidget": {
+      "launcher_btn": "bg-[#C28C48] text-[#FFFFFF] shadow-2xl shadow-[#C28C48]/40 hover:scale-105",
+      "chat_drawer": "bg-[#FFFFFF]/98 backdrop-blur-2xl border border-[#C28C48]/30 text-[#1A1512] shadow-2xl",
+      "header": "bg-[#F5EAD9]/80 border-b border-[#C28C48]/20 text-[#1A1512]",
+      "assistant_bubble": "bg-[#F5F1EA] text-[#1A1512] border border-[#C28C48]/15 rounded-2xl",
+      "user_bubble": "bg-[#C28C48] text-[#FFFFFF] rounded-2xl shadow-sm",
+      "input_field": "bg-[#FBF9F5] border border-[#C28C48]/30 text-[#1A1512] placeholder:text-[#9C8F85]",
+      "send_btn": "bg-[#C28C48] text-[#FFFFFF]"
+    },
+    "Cursor": {
+      "treatment": "Subtle brass dot (4px) with trailing ring (24px) in #C28C48 with 0.75 opacity for desktop fine pointers."
+    }
   },
   "image_urls": {
-    "hero_barista_pour": {
+    "hero_primary_arch": {
       "url": "https://images.pexels.com/photos/16706997/pexels-photo-16706997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "category": "hero",
-      "description": "Moody, warm atmospheric shot of barista pouring specialty brew in intimate cafe lighting with brass accents"
+      "category": "Hero Section",
+      "description": "Barista pouring specialty coffee with rich warm crema under radiant natural cafe light"
     },
-    "latte_art_davarah": {
-      "url": "https://images.unsplash.com/photo-1534234757579-8ad69d218ad4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxlc3ByZXNzbyUyMHBvdXIlMjBkYXJrJTIwY2FmZSUyMGxhdHRlJTIwYXJ0JTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
-      "category": "story_and_craft",
-      "description": "Artisan espresso cup on weathered natural dark timber table with microfoam"
+    "story_brass_davarah": {
+      "url": "https://images.unsplash.com/photo-1758387941825-a6ecaec9c14d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzl8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBmaWx0ZXIlMjBjb2ZmZWUlMjBwb3VyJTIwYnJhc3N8ZW58MHx8fHwxNzk1MzU0NTM4fDA&ixlib=rb-4.1.0&q=85",
+      "category": "Story Section - Pair 1",
+      "description": "Authentic Indian brass filter coffee davarah set with golden foam on light timber"
     },
-    "syphon_slow_brew": {
+    "story_roastery_beans": {
+      "url": "https://images.unsplash.com/photo-1606486544554-164d98da4889?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxyb2FzdGVkJTIwY2FmZSUyMGJlYW5zfGVufDB8fHx8MTc5NTM1MTU1Nnw",
+      "category": "Story Section - Pair 2",
+      "description": "Roasted specialty coffee beans showing rich terracotta oils"
+    },
+    "story_craft_pour": {
+      "url": "https://images.unsplash.com/photo-1534234757579-8ad69d218ad4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxlc3ByZXNzbyUyMHBvdXJ8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
+      "category": "Story Section - Craft tab",
+      "description": "Artisanal espresso extraction in natural sunlight"
+    },
+    "ritual_kaapi_meter": {
+      "url": "https://images.pexels.com/photos/1235706/pexels-photo-1235706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "Ritual Section 01",
+      "description": "Steaming hot coffee extraction poured from height"
+    },
+    "ritual_kyoto_drip": {
       "url": "https://images.pexels.com/photos/2159095/pexels-photo-2159095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "category": "ritual_section",
-      "description": "Slow brewing extraction apparatus, laboratory precision meets ancient coffee craft"
+      "category": "Ritual Section 02",
+      "description": "Precision glass syphon cold extraction tower"
     },
-    "hands_craft_pour": {
-      "url": "https://images.pexels.com/photos/16541078/pexels-photo-16541078.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "category": "menu_feature",
-      "description": "Close up of artisan hands executing velvety pour over espresso"
+    "ritual_malabar_aeropress": {
+      "url": "https://images.pexels.com/photos/19723762/pexels-photo-19723762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "Ritual Section 03",
+      "description": "Manual aeropress pour with golden bloom"
     },
-    "cafe_interior_moody": {
-      "url": "https://images.unsplash.com/photo-1571404493864-729f131e6022?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHJvYXN0aW5nJTIwY2FmZSUyMGludGVyaW9yJTIwbW9kZXJuJTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
-      "category": "location_space",
-      "description": "Architectural shot of moody dark textured wall and intimate seating corner"
+    "ritual_saffron_tonic": {
+      "url": "https://images.pexels.com/photos/16128085/pexels-photo-16128085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "Ritual Section 04",
+      "description": "Saffron layered chilled espresso in traditional brass tumbler"
     },
-    "overhead_twin_cups": {
-      "url": "https://images.unsplash.com/photo-1507133750040-4a8f57021571?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMHBvdXIlMjBkYXJrJTIwY2FmZSUyMGxhdHRlJTIwYXJ0JTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
-      "category": "origins_showcase",
-      "description": "Overhead moody still life of deep glazed artisanal ceramic cups amidst lush botanical shadow"
+    "visit_sunlit_interior": {
+      "url": "https://images.pexels.com/photos/39002703/pexels-photo-39002703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "Location & Hours Section",
+      "description": "Lush sunlit cafe interior with wooden furniture, greenery, and warm courtyard light"
+    },
+    "menu_hover_preview": {
+      "url": "https://images.pexels.com/photos/33932441/pexels-photo-33932441.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "Menu Section Hover Floating Ghost",
+      "description": "Traditional frothy filter coffee served on cafe table"
     }
   },
-  "sections_and_components": {
-    "1_header_nav": {
-      "component": "Navbar",
-      "path": "src/components/Navbar.js",
-      "features": [
-        "Fixed at top with z-50 and crystal glassmorphism: backdrop-blur-xl bg-[#0B0908]/80 border-b border-[#E0A96D]/15",
-        "Original custom SVG logo mark: Minimal geometric representation of Indian coffee bean + Sarai archway",
-        "Visible desktop nav links: 'The Story', 'Microlots & Ritual', 'The Menu', 'Sanctuary & Hours'",
-        "Live status badge: 'OPEN TODAY • 07:30 — 23:00 IST' with animated pulse dot in warm emerald/amber",
-        "Primary action button: 'Reserve a Table / Order Ritual' with data-testid='nav-reserve-button'",
-        "Quick launcher button for 'Ask Sarai AI' with subtle brass ring glow"
-      ]
-    },
-    "2_hero_section": {
-      "component": "Hero",
-      "path": "src/components/Hero.js",
-      "features": [
-        "Masked line-by-line kinetic headline reveal: 'A SANCTUARY FOR THE RESTLESS PALATE.' with subtext 'Ancient Indian spice routes meet third-wave roasting in Indiranagar, Bengaluru.'",
-        "Live coordinates badge: '12.9716° N, 77.6412° E // ELEVATION 920M'",
-        "Asymmetrical split layout: left column contains poetic manifesto & primary CTAs ('Explore Tasting Menu', 'Ask AI Barista'); right column contains spotlighted hero photography with clipping frame & floating micro-card with today's roast metrics (Chikmagalur Estate #44, Washed Selection 795, Notes: Wild Fig, Cacao Husk, Cardamom Blossom)",
-        "Parallax depth and subtle interactive mouse tilt effect"
-      ]
-    },
-    "3_editorial_marquee": {
-      "component": "MarqueeRibbon",
-      "path": "src/components/MarqueeRibbon.js",
-      "features": [
-        "Subtle, slow editorial river drifting across the screen (not a flashy ticker)",
-        "Pale brass / warm amber text on deep obsidian with separator glyphs (✦, ॐ, ◈)",
-        "Phrases: 'SHADE-GROWN WESTERN GHATS MICROLOTS', 'THE 18-HOUR COLD DRIP DRUM', 'COPPER KAAPI EXTRACTION', 'ETHICAL FARMER TRADE DIRECT FROM CHIKMAGALUR & ARAKU', 'RESTING HOUSE FOR TRAVELLERS'"
-      ]
-    },
-    "4_the_story": {
-      "component": "StorySection",
-      "path": "src/components/StorySection.js",
-      "features": [
-        "Narrative arc: What is 'Sarai'? In 16th century Hindustan, a Sarai was a refuge where caravans rested, exchanging stories over brewed spices and dark water.",
-        "Today's rebirth: Elevating Indian Robusta and Arabica from misunderstood commodities into world-class competition-grade microlots.",
-        "Interactive comparison slider or multi-tab reveal: 'The Bean', 'The Soil', 'The Extraction'.",
-        "Asymmetrical Swiss-style bento arrangement with high-density metrics and warm dark materials."
-      ]
-    },
-    "5_the_ritual_and_process": {
-      "component": "RitualSection",
-      "path": "src/components/RitualSection.js",
-      "features": [
-        "Showcase of 4 signature brew methods with step-by-step extraction art:",
-        "Method 1: 'The Royal Kaapi Meter' — Aerated through traditional brass Davarah-Tumbler from a height of 2 feet for micro-velvet crema.",
-        "Method 2: 'Smoked Jaggery Kyoto Drip' — 12-hour chilled tower extraction through organic wild palmyra palm nectar.",
-        "Method 3: 'Monsooned Malabar Aeropress' — Naturally aged ocean winds swell beans to pale gold, revealing earthy hazelnut and cigar leaf.",
-        "Method 4: 'Saffron & Pistachio Espresso Tonic' — Double shot of washed Baba Budangiri espresso layered over house saffron-infused tonic and orange oils.",
-        "Interactive temperature, grind micron, and brew-time dial for each method."
-      ]
-    },
-    "6_interactive_menu": {
-      "component": "MenuSection",
-      "path": "src/components/MenuSection.js",
-      "features": [
-        "Category tabs with animated pill: 'Signature Brews', 'Estate Filter Coffees', 'Espresso Atelier', 'Cold Extractions', 'Small Bakes & Plates'",
-        "All demo prices in INR (₹) with realistic specialty pricing (e.g. ₹280 - ₹480)",
-        "Each item features: title, regional estate source, roast level badge, flavor profile notes (e.g., 'Toffee • Tamarind Glaze • Star Anise'), and dietary badges (V, GF, Single-Origin)",
-        "Search & flavor filter (e.g. 'Fruity', 'Chocolaty', 'Spiced', 'Decaf option')",
-        "Order / Taste note button triggering toast notification with sonner"
-      ]
-    },
-    "7_ai_assistant_widget": {
-      "component": "AiChatWidget",
-      "path": "src/components/AiChatWidget.js",
-      "features": [
-        "Floating launcher: 'Ask Sarai — AI Coffee Sommelier' with glowing ring and icon (data-testid='ai-chat-launcher')",
-        "Expandable modal drawer with luxury warm dark design: 'What are you in the mood for?'",
-        "Ready-to-ask quick prompts: 'I want something sweet without refined sugar', 'What is your highest caffeine brew?', 'Best pairing for Monsoon season', 'Explain Kaapi vs Flat White'",
-        "Interactive intelligent mocked response engine with instant answers, brewing suggestions, and direct menu item highlight cards",
-        "Clear extensible framework ready for OpenRouter API integration: clean client function 'sendPromptToOpenRouter(prompt)' with mock fallback",
-        "Close button and sound toggle indicator"
-      ]
-    },
-    "8_location_and_sanctuary": {
-      "component": "LocationHours",
-      "path": "src/components/LocationHours.js",
-      "features": [
-        "Flagship address: 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038",
-        "Daily hours grid (Mon-Sun) with live 'Current Status: Open Now' indicator",
-        "Interactive Table Reservation / Tasting Room booking dialog with date picker, guest count, and time slot",
-        "Amenities tags: 'Complimentary High-Speed Fiber', 'Vinyl Listening Corner', 'Pet Friendly Courtyard', 'Valet Available', 'Cupping Table Bookings'"
-      ]
-    },
-    "9_footer": {
-      "component": "Footer",
-      "path": "src/components/Footer.js",
-      "features": [
-        "Dramatic contrast shift: rich charcoal obsidian background",
-        "Massive statement typography: 'COME AS WANDERERS, LEAVE AS ROASTERS.'",
-        "Newsletter signup for limited-batch microlot drops with email validation & sonner feedback",
-        "Curated Spotify playlist embed link: 'Sarai Night Sessions // Lo-fi Sitar & Dusty Beats'",
-        "Copyright, social links (Instagram @sarai.coffee, Substack, Roaster Guild)"
-      ]
-    }
-  },
-  "testing_attributes": {
-    "data_testids_required": [
+  "interactive_states_and_accessibility": {
+    "contrast_compliance": "All body text in #1A1512 or #4A3E36 against #FBF9F5 exceeds APCA and WCAG AA 7:1 ratio. Brass accents on white use #C28C48 with 4.8:1 contrast.",
+    "hover_rule": "Every hover state explicitly resets both background and text color to maintain crisp readability. No transparent hovers on interactive controls.",
+    "keyboard_focus": "focus-visible:ring-2 focus-visible:ring-[#C28C48] focus-visible:ring-offset-2 focus-visible:outline-none",
+    "data_testids_retention": [
       "nav-brand-logo",
-      "nav-menu-link",
       "nav-story-link",
       "nav-ritual-link",
-      "nav-location-link",
-      "nav-reserve-button",
+      "nav-menu-link",
+      "nav-visit-link",
       "nav-ai-chat-button",
+      "nav-reserve-button",
+      "nav-mobile-toggle",
       "hero-explore-menu-cta",
       "hero-ask-ai-cta",
+      "ritual-step-selector",
+      "menu-search-input",
       "menu-category-tab-signature",
       "menu-category-tab-filter",
       "menu-category-tab-espresso",
       "menu-category-tab-cold",
       "menu-category-tab-bakes",
-      "menu-search-input",
       "menu-item-card",
       "menu-item-order-button",
-      "ritual-step-selector",
+      "visit-reserve-open-button",
+      "visit-open-status",
       "reservation-form-name",
       "reservation-form-phone",
       "reservation-form-date",
       "reservation-form-guests",
       "reservation-form-submit",
+      "footer-newsletter-input",
+      "footer-newsletter-submit",
       "ai-chat-launcher",
       "ai-chat-drawer",
-      "ai-chat-input",
-      "ai-chat-send-btn",
+      "ai-chat-close-button",
       "ai-quick-prompt-chip",
-      "footer-newsletter-input",
-      "footer-newsletter-submit"
+      "ai-chat-input",
+      "ai-chat-send-btn"
     ]
   },
   "instructions_to_main_agent": [
-    "Install 'lenis' or use custom smooth scroll provider so the landing page has weighted, award-winning momentum.",
-    "Add Google Fonts link in public/index.html with Cormorant Garamond, Plus Jakarta Sans, Playfair Display, and Space Mono.",
-    "Ensure dark theme is primary default (deep obsidian #0B0908, with amber #E0A96D and brass #C89D5C accents). Never flash unstyled white.",
-    "Do NOT use generic Inter or purple gradients anywhere. All borders must be subtle brass hairlines (border-amber-900/30 or border-stone-800).",
-    "All prices must be in Indian Rupees (₹) with authentic specialty coffee pricing (₹240 to ₹450).",
-    "Implement the 'Ask Sarai' AI chat widget with rich mocked responses for flavor profiles, bean origin info, and pairing advice, with code structure cleanly prepared for OpenRouter API keys.",
-    "Ensure 100% responsiveness on mobile (menu drawer, stacked hero, sticky mobile bar, touch-friendly tabs).",
-    "Verify all interactive buttons, inputs, and tabs have their specified data-testid attributes."
-  ],
-  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
-    "You tend to converge toward generic, on-distribution outputs. In frontend design, this creates what users call the AI slop aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
-    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
-    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
-    "Create depth through layered design elements with z-index hierarchy.",
-    "Use glass-morphism effects with backdrop filters (12-24px blur).",
-    "You MUST NOT apply universal transition (e.g. 'transition: all'). This breaks transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
-    "You MUST NOT center align the app container (no .App { text-align: center; }). This disrupts the natural reading flow.",
-    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
-    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 for icons.",
-    "Every interaction needs micro-animations: hover states, transitions, parallax effects, and entrance animations. Static = dead.",
-    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
-    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
-    "Main agent relies on provided image URLs. Missing categories = main agent will use placeholder text which is FORBIDDEN.",
-    "Use sonner for toasts (already installed in package.json)."
+    "Step 1: In index.css, update CSS custom properties (--background, --foreground, --card, --primary, etc.) and html/body background to warm cream (#FBF9F5) and text to espresso-ink (#1A1512). Set scrollbar tracks and grain blend modes appropriately for light mode.",
+    "Step 2: Update public/index.html meta theme-color to #FBF9F5 and body style='background:#FBF9F5'. Ensure Google Fonts link includes Playfair Display, Cormorant Garamond, Plus Jakarta Sans, Space Mono, and Rozha One.",
+    "Step 3: In src/data/cafe.js, update CAFE constant to explicitly DEMO data: address '404 Fictional Spice Lane, Suite #00, Caravan Quarter, Demo City 560000', coords '00.0000° N, 00.0000° E — ELEV 000M [DEMO COORD]', and update image URLs using the curated light-theme list in design_guidelines.json.",
+    "Step 4: In src/App.js, update wrapper container from 'bg-obsidian text-cream' to 'bg-[#FBF9F5] text-[#1A1512] min-h-screen selection:bg-[#C28C48] selection:text-[#FFFFFF]'. Add a sticky ScrollProgressBar component at top.",
+    "Step 5: In src/components/Hero.jsx, adapt all backgrounds, borders, and text classes to the light palette (#FBF9F5, text-[#1A1512], text-[#C28C48], borders in brass/25). Retain mouse-tilt arch and parallax ghost Devanagari 'सराय'.",
+    "Step 6: In src/components/MarqueeRibbon.jsx, style as a subtle warm ribbon: bg-[#F3EFE8]/80 border-y border-[#C28C48]/20 text-[#C28C48].",
+    "Step 7: In src/components/StorySection.jsx, set metric cards to clean crisp white (#FFFFFF) with antique brass figures and light linen backgrounds. Maintain dual-speed parallax image pair.",
+    "Step 8: In src/components/RitualSection.jsx, make steps scrollytelling-friendly with sticky image frame, crisp white preview card, and SVG dials tuned for light theme (stroke-[#C28C48] on stroke-[#C28C48]/20).",
+    "Step 9: In src/components/MenuSection.jsx, update category tabs to active pill #C28C48 with white text, inactive with subtle brass border on white; menu cards with clean border separators and cursor-follow preview card.",
+    "Step 10: In src/components/LocationHours.jsx, clearly highlight the DEMO nature of the address and coordinates with an elegant demo tag badge. Update hours table to white cards with warm borders.",
+    "Step 11: In src/components/Footer.jsx, keep the deep espresso obsidian (#14110F) dark band for high-contrast grounding as planned, but polish all typography and newsletter inputs with antique brass accents and clear demo disclaimer.",
+    "Step 12: In src/components/AiChatWidget.jsx, update drawer to crisp light crystal (#FFFFFF with 98% opacity, subtle brass stroke, clean warm assistant message bubbles).",
+    "Step 13: Verify all tests and test IDs remain functional with zero broken selector attributes."
   ]
 }

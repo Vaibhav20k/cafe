@@ -2,25 +2,22 @@ export const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export const IMAGES = {
   hero: "https://images.pexels.com/photos/16706997/pexels-photo-16706997.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  storyCraft:
-    "https://images.unsplash.com/photo-1534234757579-8ad69d218ad4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxlc3ByZXNzbyUyMHBvdXIlMjBkYXJrJTIwY2FmZSUyMGxhdHRlJTIwYXJ0JTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
   storyBrass:
     "https://images.unsplash.com/photo-1758387941825-a6ecaec9c14d?auto=format&fit=crop&w=900&q=80",
   beans:
     "https://images.unsplash.com/photo-1606486544554-164d98da4889?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwzfHxyb2FzdGVkJTIwY29mZmVlJTIwYmVhbnMlMjBkYXJrJTIwdGV4dHVyZXxlbnwwfHx8fDE3OTUzNTE1NTZ8MA&ixlib=rb-4.1.0&q=85",
+  storyCraft:
+    "https://images.unsplash.com/photo-1534234757579-8ad69d218ad4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwzfHxlc3ByZXNzbyUyMHBvdXIlMjBkYXJrJTIwY2FmZSUyMGxhdHRlJTIwYXJ0JTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
   ritualSyphon:
     "https://images.pexels.com/photos/2159095/pexels-photo-2159095.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   ritualPour:
     "https://images.pexels.com/photos/19723762/pexels-photo-19723762.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  chai: "https://images.pexels.com/photos/40486290/pexels-photo-40486290.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   steamPour:
     "https://images.pexels.com/photos/1235706/pexels-photo-1235706.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  interior:
-    "https://images.unsplash.com/photo-1571404493864-729f131e6022?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHJvYXN0aW5nJTIwY2FmZSUyMGludGVyaW9yJTIwbW9kZXJuJTIwbW9vZHl8ZW58MHx8fHwxNzk1MzUxNTEwfDA&ixlib=rb-4.1.0&q=85",
-  interiorWarm:
-    "https://images.pexels.com/photos/17593509/pexels-photo-17593509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   brassCups:
     "https://images.pexels.com/photos/16128085/pexels-photo-16128085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  interiorSunlit:
+    "https://images.pexels.com/photos/39002703/pexels-photo-39002703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 };
 
 export const CATEGORIES = [
@@ -84,9 +81,13 @@ export const QUICK_PROMPTS = [
   "Explain Kaapi vs Flat White",
 ];
 
+export const MENU_DISCLAIMER =
+  "Demo menu — every item, price and origin is simulated for demonstration.";
+
 export const CAFE = {
   name: "SARAI",
-  address: "100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru 560038",
-  coords: "12.9716° N, 77.6412° E",
-  mapsUrl: "https://maps.google.com/?q=100+Feet+Road+Indiranagar+Bengaluru",
+  address: "404 Fictional Spice Lane, Suite #00, Caravan Quarter, Demo City 560000",
+  coords: "00.0000° N, 00.0000° E — ELEV 000M [DEMO COORDS]",
+  phone: "+91 00000 00000 (Demo only)",
+  mapsUrl: "https://maps.google.com/?q=fictional+demo+cafe",
 };

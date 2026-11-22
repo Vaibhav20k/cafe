@@ -4,6 +4,7 @@ import "./App.css";
 import { ChatCtx } from "./context";
 import Preloader from "./components/Preloader";
 import Cursor from "./components/Cursor";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import MarqueeRibbon from "./components/MarqueeRibbon";
@@ -25,7 +26,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.failed) {
       return (
-        <div className="flex min-h-screen items-center justify-center bg-obsidian text-cream">
+        <div className="flex min-h-screen items-center justify-center bg-linen text-ink">
           <p className="font-serif2 text-xl italic">The kettle hiccuped. Refresh to pour again.</p>
         </div>
       );
@@ -59,9 +60,10 @@ function Page() {
     <ChatCtx.Provider value={{ openChat }}>
       <Preloader onDone={() => setReady(true)} />
       <Cursor />
+      <ScrollProgressBar />
       <div className="grain" aria-hidden />
       <Navbar onAsk={openChat} />
-      <main>
+      <main className="bg-linen text-ink selection:bg-brassantique selection:text-white">
         <Hero ready={ready} onAsk={openChat} />
         <MarqueeRibbon />
         <StorySection />
@@ -77,7 +79,7 @@ function Page() {
 
 export default function App() {
   return (
-    <div className="bg-obsidian text-cream">
+    <div className="min-h-screen bg-linen text-ink">
       <ErrorBoundary>
         <Page />
       </ErrorBoundary>

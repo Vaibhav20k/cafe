@@ -6,6 +6,8 @@ export default function Cursor() {
   const y = useMotionValue(-100);
   const sx = useSpring(x, { stiffness: 500, damping: 40, mass: 0.4 });
   const sy = useSpring(y, { stiffness: 500, damping: 40, mass: 0.4 });
+  const ringX = useSpring(x, { stiffness: 160, damping: 24, mass: 0.6 });
+  const ringY = useSpring(y, { stiffness: 160, damping: 24, mass: 0.6 });
   const ref = useRef(null);
 
   useEffect(() => {
@@ -20,12 +22,19 @@ export default function Cursor() {
   }, [x, y]);
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ x: sx, y: sy, opacity: 0 }}
-      className="pointer-events-none fixed left-0 top-0 z-[96] hidden -translate-x-1/2 -translate-y-1/2 lg:block mix-blend-difference"
-    >
-      <div className="h-3 w-3 rounded-full bg-brass" />
-    </motion.div>
+    <div ref={ref} style={{ opacity: 0 }} className="pointer-events-none fixed left-0 top-0 z-[96] hidden lg:block">
+      <motion.div
+        style={{ x: sx, y: sy }}
+        className="fixed left-0 top-0 -translate-x-1/2 -translate-y-1/2"
+      >
+        <div className="h-1.5 w-1.5 rounded-full bg-brassantique" />
+      </motion.div>
+      <motion.div
+        style={{ x: ringX, y: ringY }}
+        className="fixed left-0 top-0 -translate-x-1/2 -translate-y-1/2"
+      >
+        <div className="h-7 w-7 rounded-full border border-brassantique/40" />
+      </motion.div>
+    </div>
   );
 }
