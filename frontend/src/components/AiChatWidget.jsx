@@ -93,8 +93,14 @@ export default function AiChatWidget({ open, setOpen }) {
                 <div>
                   <p className="font-display text-base text-cream">Sarai Sommelier</p>
                   <p className="flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.2em] text-faint">
-                    <span className={`h-1 w-1 rounded-full ${mode === "openrouter" ? "bg-emerald-400" : "bg-brass animate-pulse-dot"}`} />
-                    {mode === "openrouter" ? "Live on OpenRouter" : mode === "demo" ? "Demo mind — OpenRouter-ready" : "OpenRouter-ready"}
+                    <span className={`h-1 w-1 rounded-full ${mode === "claude" || mode === "openrouter" ? "bg-emerald-400" : "bg-brass animate-pulse-dot"}`} />
+                    {mode === "claude"
+                      ? "Live on Claude"
+                      : mode === "openrouter"
+                        ? "Live on OpenRouter"
+                        : mode === "demo"
+                          ? "Demo mind — Claude-ready"
+                          : "Claude-ready"}
                   </p>
                 </div>
               </div>
@@ -118,7 +124,7 @@ export default function AiChatWidget({ open, setOpen }) {
                   ) : (
                     <div className="max-w-[88%] rounded-2xl rounded-bl-sm border border-brass/15 bg-ember/70 px-4 py-3">
                       {m.content ? (
-                        <p className="text-sm leading-relaxed text-cream/90">{m.content}</p>
+                        <p className="text-sm leading-relaxed text-cream/90">{m.content.replace(/\*\*/g, "").replace(/^#+\s/gm, "")}</p>
                       ) : (
                         <div className="flex gap-1.5 py-1">
                           {[0, 1, 2].map((d) => (

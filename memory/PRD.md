@@ -29,9 +29,9 @@ User choices: vibe = warm minimal + dark & moody espresso bar + bold modern (fus
 
 ## Implemented (2026-11-22)
 - Full single-page site (all sections above), backend chat+menu API, Mongo seeding, chat persistence, favicon/logo, film-grain overlay, live open/closed status, reservation + newsletter demo flows.
+- (2026-11-22, later) Claude AI integration: /api/chat now streams from Anthropic Claude Sonnet 5.5 via emergentintegrations LlmChat with the Emergent Universal Key (EMERGENT_LLM_KEY). Priority chain: Claude → OpenRouter (if OPENROUTER_API_KEY set) → demo sommelier. Header badge shows "Live on Claude". Markdown stripped in chat bubbles.
 
 ## Backlog / Remaining
-- P0: Add OPENROUTER_API_KEY (via secrets/env) → sommelier goes live; switch OPENROUTER_MODEL if desired.
 - P1: Persist reservations to backend (currently demo toast only); newsletter capture.
 - P1: Real gallery section; Instagram feed; Spotify embed.
 - P2: Multi-page (menu PDF, events/cuppings), i18n (Hindi copy), analytics.

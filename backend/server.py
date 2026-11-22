@@ -9,6 +9,7 @@ from pathlib import Path
 
 import httpx
 from dotenv import load_dotenv
+from emergentintegrations.llm.chat import LlmChat, UserMessage, TextDelta, StreamDone
 from fastapi import FastAPI, APIRouter
 from fastapi.responses import StreamingResponse
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -27,6 +28,8 @@ api_router = APIRouter(prefix="/api")
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 OPENROUTER_BASE = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_MODEL = os.environ.get("OPENROUTER_MODEL", "openai/gpt-4o-mini")
+EMERGENT_LLM_KEY = os.environ.get("EMERGENT_LLM_KEY", "")
+CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("sarai")
@@ -141,7 +144,7 @@ class ChatIn(BaseModel):
 
 @api_router.get("/")
 async def root():
-    return {"message": "SARAI API — brewing.", "mode": "openrouter" if OPENROUTER_API_KEY else "demo"}
+    return {"message": "SARAI API — brewing.", "mode": chat_mode()}
 
 
 @api_router.get("/menu")
@@ -153,9 +156,17 @@ async def get_menu():
     return {"items": items, "cafe": CAFE_INFO}
 
 
+def chat_mode() -> str:
+    if EMERGENT_LLM_KEY:
+        return "claude"
+    if OPENROUTER_API_KEY:
+        return "openrouter"
+    return "demo"
+
+
 @api_router.get("/health")
 async def health():
-    return {"ok": True, "chat_mode": "openrouter" if OPENROUTER_API_KEY else "demo"}
+    return {"ok": True, "chat_mode": chat_mode()}
 
 
 async def save_message(session_id: str, role: str, content: str):
@@ -276,9 +287,40 @@ async def openrouter_stream(session_id: str, message: str):
     yield sse({"done": True, "mode": "openrouter"})
 
 
+async def claude_stream(session_id: str, message: str):
+    await save_message(session_id, "user", message)
+    full = ""
+    try:
+        chat = LlmChat(
+            api_key=EMERGENT_LLM_KEY,
+            session_id=f"sarai-{session_id}",
+            system_message=SYSTEM_PROMPT,
+        ).with_model("anthropic", CLAUDE_MODEL)
+        async for ev in chat.stream_message(UserMessage(text=message)):
+            if isinstance(ev, TextDelta):
+                if ev.content:
+                    full += ev.content
+                    yield sse({"delta": ev.content})
+            elif isinstance(ev, StreamDone):
+                break
+    except Exception as exc:
+        logger.error("claude_stream failed: %s", exc)
+        if not full:
+            yield sse({"delta": "My faraway brain blinked for a moment — ask me again in a few seconds."})
+    if full:
+        await save_message(session_id, "assistant", full)
+        yield sse({"done": True, "mode": "claude"})
+    else:
+        yield sse({"done": True, "mode": "claude-error"})
+
+
 @api_router.post("/chat")
 async def chat(input: ChatIn):
-    if OPENROUTER_API_KEY:
+    mode = chat_mode()
+    if mode == "claude":
+        return StreamingResponse(claude_stream(input.session_id, input.message),
+                                 media_type="text/event-stream", headers=cors_headers())
+    if mode == "openrouter":
         return StreamingResponse(openrouter_stream(input.session_id, input.message),
                                  media_type="text/event-stream", headers=cors_headers())
     return StreamingResponse(demo_stream(input.session_id, input.message),
