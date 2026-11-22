@@ -30,6 +30,7 @@ User choices: vibe = warm minimal + dark & moody espresso bar + bold modern (fus
 ## Implemented (2026-11-22)
 - Full single-page site (all sections above), backend chat+menu API, Mongo seeding, chat persistence, favicon/logo, film-grain overlay, live open/closed status, reservation + newsletter demo flows.
 - (2026-11-22, later) Claude AI integration: /api/chat now streams from Anthropic Claude Sonnet 5.5 via emergentintegrations LlmChat with the Emergent Universal Key (EMERGENT_LLM_KEY). Priority chain: Claude → OpenRouter (if OPENROUTER_API_KEY set) → demo sommelier. Header badge shows "Live on Claude". Markdown stripped in chat bubbles.
+- (2026-11-22) Code pushed to github.com/Vaibhav20k/cafe (branch main, commit 5e1a6e7) using user-supplied GITHUB_TOKEN (stored in secrets). Excluded from push: backend/.env, frontend/.env, .emergent/, node_modules, root yarn.lock.
 
 ## Backlog / Remaining
 - P1: Persist reservations to backend (currently demo toast only); newsletter capture.
